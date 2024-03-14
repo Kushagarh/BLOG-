@@ -1,0 +1,37 @@
+<div class="author">
+    <h1 class="author__heading">Hi, I am Kushagarh.</h1>
+    <p class="author__body">Web developer and content creator.</p>
+  </div>
+  
+  <img src="/img/hero-image.webp" alt="person looking out through window" class="hero-image" width="981" height="528">
+  
+  <section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+  
+    <ul class="article-ul">
+
+      <% data.forEach(element => { %>            <!-- data is defined in main.js  (const data = await Post.find()) -->
+      
+        <li>
+          <a href="/post/<%= element._id %>">
+            <span><%= element.title %></span>                       <!--   //title and createdAt are words from database  -->
+            <span class="article-list__date"><%= element.createdAt.toDateString() %></span>
+          </a>
+        </li>
+      
+        <% }) %>
+
+    </ul>
+  
+  
+    
+    <% if (nextPage !== null) { %>             <!-- nextPage  came from main.js -->
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+      <% } %>    
+  
+  
+    
+  
+  
+  
+  </section>

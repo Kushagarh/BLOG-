@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title  %></title>                            <!--    main.js me res.render('index',{locals}) kia tha to vha se aaye ye variables  'locals.title '  --> 
+    <meta name="description" content="<%= locals.description %>">
+   <link rel="stylesheet" href="/css/style.css">
+   <script type="text/javascript " defer src="/js/script.js"></script>
+</head>
+<body>
+    <!-- <h1>Main layout</h1> -->
+
+      <div class="container">
+        <%- include('../partials/header_admin.ejs')  %>
+
+        <main class="main">
+
+        <%- body  %>        <!-- means (index.ejs ya about.ejs ya contact.ejs) file ka data aajeega  according to request ((like 127.0.0.1:5000 => isse index.ejs file ka data render hoga)) -->    
+
+        </main>
+
+    <%- include('../partials/footer.ejs')   %>
+
+
+</div>
+
+
+</body>
+</html>
